@@ -30,3 +30,10 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+/4.持久对话/data/
+
+/5.工具调用和文件系统访问/data/config.json
+/5.工具调用和文件系统访问/data/sessions/
+/11.A2UI/data/
+/12.抢占中止/data/
+/.trae/

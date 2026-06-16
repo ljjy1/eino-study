@@ -1,0 +1,122 @@
+2026/06/12 14:00:33 [approve] session=3fd40fc4-6091-4865-ac63-411059bc290d stream error: [NodeRunError] panic error: unexpected input type. expected: map[string]interface {}, got: main.ScoreIn, 
+stack: goroutine 177 [running]:
+runtime/debug.Stack()
+        /Users/zgp/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.0.darwin-arm64/src/runtime/debug/stack.go:26 +0x64
+github.com/cloudwego/eino/compose.(*taskManager).execute.func1()
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_manager.go:290 +0x64
+panic({0x1039996e0?, 0x140004f9af0?})
+        /Users/zgp/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.0.darwin-arm64/src/runtime/panic.go:783 +0x120
+github.com/cloudwego/eino/compose.newGenericHelper[...].func11()
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/field_mapping.go:216 +0xf0
+github.com/cloudwego/eino/compose.(*preNodeHandlerManager).handle(0x14000c91d18, {0x103729a3c, 0x5}, {0x1039e7380, 0x1400014b590}, 0x0)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_manager.go:82 +0xf8
+github.com/cloudwego/eino/compose.(*channelManager).getFromReadyChannels(0x14000aa16c0, {0x30?, 0x140004db8d8?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_manager.go:197 +0xc4
+github.com/cloudwego/eino/compose.(*channelManager).updateAndGet(0x14000aa16c0, {0x103bd9038, 0x140001f2db0}, 0x14000c91d68?, 0x1400014b2c0)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_manager.go:216 +0xe0
+github.com/cloudwego/eino/compose.(*runner).calculateNextTasks(0x140009365a0, {0x103bd9038, 0x140001f2db0}, {0x14000c91d68?, 0x5?, 0xffffffffffffffff?}, 0x30?, 0x14000aa16c0, 0x1400051fb30)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:715 +0x50
+github.com/cloudwego/eino/compose.(*runner).run(0x140009365a0, {0x103bd9038, 0x1400014b770}, 0x0, {0x103a48440, 0x14000dd5500}, {0x1400040e4d0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:309 +0x1034
+github.com/cloudwego/eino/compose.(*runner).invoke(0x103bd1d80?, {0x103bd9038?, 0x1400051e9f0?}, {0x103a48440?, 0x14000dd5500?}, {0x1400040e4d0?, 0x20?, 0x103a48440?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:87 +0x48
+github.com/cloudwego/eino/compose.(*graph).compile.(*runner).toComposableRunnable.func3({0x103bd9038, 0x1400051e9f0}, {0x103a48440, 0x14000dd5500}, {0x140004f9430?, 0x14000aa1680?, 0x1?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:1001 +0x90
+github.com/cloudwego/eino/compose.toGenericRunnable[...].func1({{0x1400072e90f, 0x81}, {0x1400072e9a0, 0xd9}}, {0x1400040e3f0, 0x1, 0x0})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:405 +0x130
+github.com/cloudwego/eino/compose.(*runnablePacker[...]).wrapRunnableCtx.func1({{0x1400072e90f?, 0x1?}, {0x1400072e9a0?, 0x102ff01a4?}}, {0x1400040e3f0?, 0x1?, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:83 +0x9c
+github.com/cloudwego/eino/compose.(*runnablePacker[...]).Invoke(...)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:160
+github.com/cloudwego/eino-examples/adk/common/tool/graphtool.(*InvokableGraphTool[...]).InvokableRun(0x103be5240, {0x103bd9038, 0x1400051e540}, {0x1400072e900, 0x17b}, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino-examples@v0.0.0-20260603034256-cba56c33505c/adk/common/tool/graphtool/graph_tool.go:119 +0x4b0
+github.com/cloudwego/eino/compose.(*invokableToolWithCallback).InvokableRun.invokeWithCallbacks[...].func3(...)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/utils.go:106
+github.com/cloudwego/eino/compose.(*invokableToolWithCallback).InvokableRun(0x48?, {0x103bd9038?, 0x14000907da0?}, {0x1400072e900?, 0x1400082dd58?}, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/tool_node.go:661 +0x8c
+github.com/cloudwego/eino/compose.wrapToolCall.func2({0x103bd9038?, 0x14000907da0?}, 0x1400082dda8?)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/tool_node.go:587 +0x44
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1.1({0x1400072e900, 0x17b}, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:133 +0xd8
+main.(*safeToolMiddleware[...]).WrapInvokableToolCall.func1({0x1400072e900?, 0x14000dd5240?}, {0x140004f8fb0?, 0x103ac92e0?, 0x1400082de68?})
+        /Users/zgp/项目/gowork/eino-study/11.A2UI/main.go:880 +0x34
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1(0x14000afcf00)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:149 +0x12c
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1.1({0x1400072e900, 0x17b}, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:133 +0xd8
+main.(*approvalMiddleware[...]).WrapInvokableToolCall.func1({0x1400072e780, 0x17b}, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/项目/gowork/eino-study/11.A2UI/main.go:968 +0x174
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1(0x14000afceb0)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:149 +0x12c
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1.1({0x1400072e780, 0x17b}, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:133 +0xd8
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1(0x14000afce60)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:149 +0x12c
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1.1({0x1400072e780, 0x17b}, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:133 +0xd8
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1(0x14000afce10)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:149 +0x12c
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1.1({0x1400072e780, 0x17b}, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:133 +0xd8
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1(0x14000afcdc0)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:149 +0x12c
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1.1({0x1400072e780, 0x17b}, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:133 +0xd8
+github.com/cloudwego/eino/adk.(*typedEventSenderToolWrapper[...]).WrapInvokableToolCall.func1({0x1400072e780, 0x14000dd5080}, {0x140004f8fb0?, 0x14b1e58c0?, 0x1045e8108?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:846 +0x4c
+github.com/cloudwego/eino/adk.handlersToToolMiddlewares[...].func1.1(0x14000afcd70)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/wrappers.go:149 +0x12c
+github.com/cloudwego/eino/compose.convTools.invokableToStreamable.func1({0x103bd9038?, 0x14000907da0?}, 0x10372920d?)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/tool_node.go:716 +0x2c
+github.com/cloudwego/eino/compose.runToolCallTaskByStream({0x103bd9038, 0x14000906690}, 0x14000a96320, {0x140004f8fb0, 0x1, 0x1})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/tool_node.go:958 +0x2f4
+github.com/cloudwego/eino/compose.parallelRunToolCall({0x103bd9038?, 0x14000906690?}, 0x14000906690?, {0x14000a96320?, 0x14000b98a90?, 0x14000d9e600?}, {0x140004f8fb0?, 0x140004db601?, 0x9?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/tool_node.go:990 +0x8c
+github.com/cloudwego/eino/compose.(*ToolsNode).Stream(0x14000a960a0, {0x103bd9038, 0x14000906690}, 0x14000d4b5f0, {0x140004f8ea0, 0x2, 0x140009061b0?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/tool_node.go:1181 +0x1e4
+github.com/cloudwego/eino/compose.newRunnablePacker[...].func22(0x1400082e918?, {0x140004f8ea0?, 0x2?, 0x2})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/utils.go:106 +0x6c
+github.com/cloudwego/eino/compose.newRunnablePacker[...].func18(0x2, {0x140004f8ea0, 0x2?, 0x2})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:303 +0x78
+github.com/cloudwego/eino/compose.(*runnablePacker[...]).Transform(...)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:179
+github.com/cloudwego/eino/compose.(*runnablePacker[...]).toComposableRunnable.func2({0x103bf07e8, 0x14000906120}, {0x14000dd4e40, 0x2, 0x2})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:143 +0xa4
+github.com/cloudwego/eino/compose.runnableTransform({0x103bd9038?, 0x140009061b0?}, 0x14000180c60?, {0x103b2ffc0?, 0x14000906120?}, {0x14000dd4e40?, 0x2?, 0x2?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:106 +0xd8
+github.com/cloudwego/eino/compose.(*taskManager).execute(0x14000181aa0, 0x140008ca510)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_manager.go:297 +0x98
+github.com/cloudwego/eino/compose.(*taskManager).submit(0x14000181aa0, {0x14000c91ce0?, 0x14000d9ff50?, 0x1400086ed20?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_manager.go:348 +0x344
+github.com/cloudwego/eino/compose.(*runner).run(0x140009361e0, {0x103bd9038, 0x14000d9ff50}, 0x1, {0x103b309e0, 0x14000d9fbf0}, {0x14000880dc0, 0x3, 0x3})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:257 +0xec8
+github.com/cloudwego/eino/compose.(*runner).transform(0x103bd1d80?, {0x103bd9038?, 0x14000d9f230?}, {0x103bf0aa8?, 0x14000d9f170?}, {0x14000880dc0?, 0x14000d9f200?, 0x102e27d2c?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:91 +0x50
+github.com/cloudwego/eino/compose.(*graph).compile.(*runner).toComposableRunnable.func4({0x103bd9038, 0x14000d9f230}, {0x103bf0aa8, 0x14000d9f170}, {0x14000c94640?, 0x0?, 0x1400082f218?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:1008 +0x90
+github.com/cloudwego/eino/compose.runnableTransform({0x103bd9038?, 0x14000d9f230?}, 0x14000181560?, {0x103b309e0?, 0x14000d9f170?}, {0x14000c94640?, 0x3?, 0x4?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:106 +0xd8
+github.com/cloudwego/eino/compose.(*taskManager).execute(0x14000181740, 0x140008ca480)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_manager.go:297 +0x98
+github.com/cloudwego/eino/compose.(*taskManager).submit(0x14000181740, {0x14000c91cd8?, 0x14000d9f140?, 0x1400086ea50?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_manager.go:348 +0x344
+github.com/cloudwego/eino/compose.(*runner).run(0x140009363c0, {0x103bd9038, 0x14000d9f140}, 0x1, {0x103b308c0, 0x14000d9e990}, {0x1400008a380, 0x4, 0x4})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:257 +0xec8
+github.com/cloudwego/eino/compose.(*runner).transform(0x103bd1d80?, {0x103bd9038?, 0x140002efc80?}, {0x103bf0a50?, 0x140002efcb0?}, {0x1400008a380?, 0x70?, 0x103b4f3a0?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:91 +0x50
+github.com/cloudwego/eino/compose.(*graph).compile.(*runner).toComposableRunnable.func4({0x103bd9038, 0x140002efc80}, {0x103bf0a50, 0x140002efcb0}, {0x14000c94540?, 0x103a62240?, 0xffffffffffffff01?})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/graph_run.go:1008 +0x90
+github.com/cloudwego/eino/compose.toGenericRunnable[...].func2(0x140002efcb0, {0x140001e1088, 0x4, 0x140002efbc0})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:428 +0x100
+github.com/cloudwego/eino/compose.newRunnablePacker[...].func12({0x1400094a040, {0x14000d3c000, 0x6?}}, {0x140001e1088?, 0x4?, 0x6})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:230 +0xd0
+github.com/cloudwego/eino/compose.(*runnablePacker[...]).wrapRunnableCtx.func2({0x1400094a040?, {0x14000d3c000?, 0x150?}}, {0x140001e1088?, 0x4?, 0x6})
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:87 +0x84
+github.com/cloudwego/eino/compose.(*runnablePacker[...]).Stream(...)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/compose/runnable.go:167
+github.com/cloudwego/eino/adk.(*TypedChatModelAgent[...]).buildMessageReActRunFunc.func2(0x14000180180?)
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/chatmodel.go:1209 +0xbdc
+github.com/cloudwego/eino/adk.(*TypedChatModelAgent[...]).Resume.func4()
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/chatmodel.go:1621 +0x270
+created by github.com/cloudwego/eino/adk.(*TypedChatModelAgent[...]).Resume in goroutine 82
+        /Users/zgp/go/pkg/mod/github.com/cloudwego/eino@v0.9.6/adk/chatmodel.go:1600 +0x6c0
